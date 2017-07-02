@@ -1,0 +1,17 @@
+<h1>{{ news.title }}</h1>
+
+{% if error_message %} <p><strong> {{ error_message}} </strong></p> {% endif %}
+
+<h2>Data: {{ news.date }}</h2>
+
+<img src="{{ news.image_link }}" alt="Não Encontrado!" >
+
+<p>{{ news.article }}</p>
+
+<h3>
+Fonte: <a href="{{ news.link }}"> {{ news.fonte }}</a>
+</h3>
+<form action="{% url 'newsite:index' %}">
+    {% csrf_token %}
+    <input type="submit" value="Voltar"/>
+</form>    

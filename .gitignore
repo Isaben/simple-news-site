@@ -1,0 +1,7 @@
+.vscode
+*.csv
+*.json
+*.sqlite3
+/newsite/__pycache__/
+/newsite/migrations/__pycache__/
+/scrapsite/__pycache__/

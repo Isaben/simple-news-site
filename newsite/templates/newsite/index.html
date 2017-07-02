@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'newsite/style.css' %}" />
+
+{% if news %}
+    <ul>
+    {% for noticia in news %}
+        <li><a href="{% url 'newsite:detail' noticia.id %}">{{ noticia.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Sem noticias.</p>
+{% endif %}
