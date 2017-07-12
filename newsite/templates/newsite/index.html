@@ -1,13 +1,25 @@
+
+<h1>Notícias retiradas do site Folha de São Paulo e Economia Uol </h1>
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'newsite/style.css' %}" />
-
+<div>
 {% if news %}
     <ul>
     {% for noticia in news %}
-        <li><a href="{% url 'newsite:detail' noticia.id %}">{{ noticia.title }}</a></li>
+    	<a href="{% url 'newsite:detail' noticia.id %}">
+    	<li>
+    		{% if noticia.image_link != "http://placeholders.org/320x200"  %}
+	        <img src="{{ noticia.image_link }}" height="150" width="210"/>
+	        {% endif %}
+		    <h3>{{ noticia.title }}</h3>
+		    <p>{{ noticia.article | truncatechars:250 }}</p>
+		    <p>{{ noticia.date }}</p>
+		    <p>Fonte: {{ noticia.fonte }}</p>
     {% endfor %}
+    	</li></a>
     </ul>
 {% else %}
     <p>Sem noticias.</p>
 {% endif %}
+</div>

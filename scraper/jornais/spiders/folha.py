@@ -46,5 +46,4 @@ class FolhaSpider(scrapy.Spider):
         new["image_link"] = image_link
         new["date"] = datetime.strptime(date, "%Y-%m-%d %H:%M")
         new["fonte"] = "Folha de São Paulo"
-
         return new
