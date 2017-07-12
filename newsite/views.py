@@ -39,6 +39,7 @@ def update_db():
 	    sleep(120)
     
 
+
 class IndexView(generic.ListView):
     model = Noticias
     template_name = "newsite/index.html"
